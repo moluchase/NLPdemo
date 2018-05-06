@@ -35,8 +35,10 @@ words, _ = zip(*count_pairs)
 
 ```
 word_int_map = dict(zip(words, range(len(words))))
-generate_batch(batch_size, poems_vec, word_to_int)
 ```
+
+**generate_batch(batch_size, poems_vec, word_to_int)**
+
 这部分是批量数据生成，主要就是将poems_vec进行分批处理，其中y标签是x标签的错位结果 从数据可以看出此处文本生成使用的是简单的RNN模型，也就是第i个输入的输出是第i+1个的输入
 
 **model.py**
@@ -60,7 +62,10 @@ generate_batch(batch_size, poems_vec, word_to_int)
 
 最后我使用'小'，生成如下词
 ```
-小院深深，风雨引晴，天气潋，春风满院，满院帘栊。 正是是，春光正好，春色渐成阴。 春光渐觉，渐夭砂、夭砂黄吸。 嫩黄嫩，嫩蛟嫩润，渐渐。
+小院深深，风雨引晴，天气潋，春风满院，满院帘栊。
+正是是，春光正好，春色渐成阴。
+春光渐觉，渐夭砂、夭砂黄吸。 
+嫩黄嫩，嫩蛟嫩润，渐渐。
 ```
 
 ### 《安娜卡列尼娜》文本生成
