@@ -2,7 +2,9 @@
 NLP方面的一些小的demo,包括文本生成,文本分类,等等,使用tensorflow实现,长期更新,欢迎指正,交流
 ## text_generation
 这部分有3个demo,分别是唐诗生成,宋词生成,AnnaKarenina文本生成
+
 这里先给出参考文章或代码以及比较好的文章：
+
 [基于Char-RNN Language Model进行文本生成（Tensorflow生成唐诗](https://blog.csdn.net/Irving_zhang/article/details/76664998)
 
 [中文古诗自动作诗机器人](https://github.com/jinfagang/tensorflow_poems)
