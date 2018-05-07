@@ -43,15 +43,7 @@ word_int_map = dict(zip(words, range(len(words))))
 
 **model.py**
 
-采用的是两层，核大小是128，embedding矩阵的维度和rnn核大小相同【这里是有问题的，如果不一样会报错，是因为变量域的问题，我在总的notes中给出了解释】
-
-**train.py**
-
-这一部分就是调用ｍｏｄｅｌ了，然后训练
-
-**compose_poems.py**
-
-因为是文本生成，也就是传入一个字，然后由该字生成一首诗 代码中先使用开始符'B'生成一个字，然后判断是否给出了字，如果给出，就用该字进行生成， 因为是一步一步的（即t=1），这里代码中也是一步步执行的，也就是将上一步的y作为当前步的输入，上一步的隐含状态作为当前的初始状态 
+采用的是两层，核大小是128，embedding矩阵的维度和rnn核大小相同【这里是有问题的，如果不一样会
 
 这里：feed_dict中传入的参数形式应该是怎么样的，之前以为只能是placeholder，不作更新，而且传入的值和里面的值是如何对应的。。。【总的notes中也给出了解释】
 
@@ -82,7 +74,23 @@ word_int_map = dict(zip(words, range(len(words))))
 ```
 
 
-## text_classfication
+## text_classification
 
-这是我最早做的一个demo，也是参考别人的代码，后期会做一个整理
+这是我最早做的一个demo，参考别人的代码
+
+参考论文与代码
+
+[Character-level Convolutional Networks for Text Classification](https://arxiv.org/abs/1509.01626)
+[CNN-RNN中文文本分类，基于tensorflow ](https://github.com/gaussic/text-classification-cnn-rnn)
+[all kinds of text classificaiton models and more with deep learning ](https://github.com/brightmart/text_classification)
+
+### deep_cnn_rnn
+CNN model
+
+模仿的是textCNN的论文,这里先是将one_hot通过词嵌入矩阵转为词向量,对于一篇文章而言,取前600个有效的字,词嵌入矩阵的维度是64维,这样得到的就是一个600*64的矩阵,然后通过维度为5的一维卷积,卷积核有256个,这样得到了一个596*256的矩阵,再通过最大池化得到1*256的向量,通过一个128个核的全连接层,最后放到softmax中
+
+RNN model
+
+textRNN ,比较简单,使用两层的RNN,将最后的y放到全连接层中,再通过softmax函数判断
+
 
