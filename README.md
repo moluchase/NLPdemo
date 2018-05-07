@@ -94,24 +94,6 @@ word_int_map = dict(zip(words, range(len(words))))
 
 有时间就将第三个github上的代码全部跑一遍,然后在网上爬一些数据测试一下
 
-### deep_cnn_rnn
-
-CNN model
-
-<<<<<<< HEAD
-模仿的是textCNN的论文,这里先是将one_hot通过词嵌入矩阵转为词向量,对于一篇文章而言,取前600个有效的字,词嵌入矩阵的维度是64维,这样得到的就是一个600*64的矩阵,然后通过维度为5的一维卷积,卷积核有256个,这样得到了一个596*256的矩阵,再通过最大池化得到1*256的向量,通过一个128个核的全连接层,最后放到softmax中
-
-RNN model
-=======
-## text_classification
-
-这是我最早做的一个demo，参考别人的代码
-
-参考论文与代码
-
-[Character-level Convolutional Networks for Text Classification](https://arxiv.org/abs/1509.01626)
-[CNN-RNN中文文本分类，基于tensorflow ](https://github.com/gaussic/text-classification-cnn-rnn)
-[all kinds of text classificaiton models and more with deep learning ](https://github.com/brightmart/text_classification)
 
 ### deep_cnn_rnn
 CNN model
@@ -122,6 +104,3 @@ RNN model
 
 textRNN ,比较简单,使用两层的RNN,将最后的y放到全连接层中,再通过softmax函数判断
 
->>>>>>> 4fb2eda6cf056ebd8d9344b59fbff593b90382ba
-
-textRNN ,比较简单,使用两层的RNN,将最后的y放到全连接层中,再通过softmax函数判断
